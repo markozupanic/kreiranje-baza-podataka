@@ -32,3 +32,12 @@ create table korisnik(
     zahtjevi varchar(50)
 );
 
+#Salon za uljepšavanje 
+
+create table salonzauljpsavanje(
+    brojmjesta varchar(50),
+    naziv varchar(50),
+    adresa varchar(50),
+    markeproizvoda varchar(50)
+);
+
