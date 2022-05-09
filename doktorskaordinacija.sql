@@ -1,7 +1,8 @@
 
 #C:\xampp\mysql\bin\mysql -uroot < C:\Users\dell\Documents\EdunovaJP26\SQL\edunovajp26.sql
-#C:\xampp\mysql\bin\mysql -uroot < C:\Korisnici\X\Dokumenti\GitHub\kreiranje-baza-podataka\doktorskaordinacija.sql
-#  < C:\Korisnici\X\Dokumenti\GitHub\kreiranje_baza_podataka\doktorskaordinacija.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Korisnici\X\Dokumenti\GitHub\baze\zadaca2\doktorskaordinacija.sql
+#C:\xampp\mysql\bin>mysql -uroot <C:\Users\X\Documents\GitHub\baze\doktorskaordinacija.sql
+
 
 
 
@@ -27,6 +28,14 @@ create table pacijent(
 create table ordinacija(
     adresa varchar(50),
     vrstaordinacije varchar(50),
-    mjesto varchar(50),
+    mjesto varchar(50)
 );
+
+create table osoba(
+    ime varchar(50),
+    prezime varchar(50)
+);
+
+
+
 

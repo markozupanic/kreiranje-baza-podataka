@@ -1,6 +1,7 @@
-
 #C:\xampp\mysql\bin\mysql -uroot < C:\Users\dell\Documents\EdunovaJP26\SQL\edunovajp26.sql
-#C:\xampp\mysql\bin\mysql -uroot < C:\Korisnici\X\Dokumenti\GitHub\kreiranje-baza-podataka\djecijivrtic.sql
+#C:\xampp\mysql\bin\mysql -uroot < C:\Korisnici\X\Dokumenti\GitHub\baze\zadaca2\doktorskaordinacija.sql
+#C:\xampp\mysql\bin>mysql -uroot <C:\Users\X\Documents\GitHub\baze\djecijivrtic.sql
+
 
 
 drop database if exists djecijivrtic;
@@ -22,8 +23,9 @@ create table odgojiteljica(
 
 create table vrtic(
     adresa varchar(50),
-    specijalizacijavrtica varchar(50);
+    specijalizacijavrtica varchar(50),
     naziv varchar(50),
     kontakt varchar(50)
 );
+
 
