@@ -9,33 +9,36 @@ create database udrugazazivotinje;
 use udrugazazivotinje;
 
 create table zaposlenik(
-    sifra int not null primary key auto_increment
-    #bice int not null,
+    sifra int not null primary key auto_increment,
+    bice int not null,
     prezime varchar(50),
     obrazovanje varchar(50),
-    karakter varchar(50)
+    karakter varchar(50),
+    prostor int not null
 );
 
 create table sticenik(
-    sifra int not null primary key auto_increment
+    sifra int not null primary key auto_increment,
     bice int not null,
     pasmina varchar(50),
+    starost varchar(50),
+    prostor int not null
+);
+
+create table prostor(
+    sifra int not null primary key auto_increment,
+    adresa varchar(50),
+    brojsticenika varchar(50),
     starost varchar(50)
 );
 
 create table bice(
-    sifra int not null primary key auto_increment
-    ime int not null
+    sifra int not null primary key auto_increment,
+    ime int not null,
+    prostor int not null
 );
 
-create table prostor(
-    sifra int not null primary key auto_increment
-    adresa varchar(50),
-    brojsticenika varchar(50),
-    naziv varchar(50)
-);
-
-#alter table zaposlenik add foreign key (prostor) references prostor(sifra);
-#alter table sticenik add foreign key (bice) references bice(sifra);
-
-
+alter table sticenik add foreign key (prostor) references prostor(sifra);
+alter table bice add foreign key (prostor) references prostor(sifra);
+alter table zaposlenik add foreign key (prostor) references prostor(sifra);
+alter table sticenik add foreign key (bice) references bice(sifra);
