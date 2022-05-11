@@ -1,6 +1,6 @@
 #C:\xampp\mysql\bin\mysql -uroot < C:\Users\dell\Documents\EdunovaJP26\SQL\edunovajp26.sql
 #C:\xampp\mysql\bin\mysql -uroot < C:\Korisnici\X\Dokumenti\GitHub\baze\zadaca2\doktorskaordinacija.sql
-#C:\xampp\mysql\bin>mysql -uroot <C:\Users\X\Documents\GitHub\baze\taksisluzba.sql
+#C:\xampp\mysql\bin>mysql -uroot < C:\Users\X\Documents\GitHub\baze\taksisluzba\taksisluzba.sql
 
 
 
@@ -9,30 +9,38 @@ create database taksisluzba;
 use taksisluzba;
 
 create table vozilo(
-    godiste varchar(50),
-    marka varchar(50),
-    snaga varchar(50),
-    kilometraza varchar(50)
+    sifra int not null primary key auto_increment,
+    godiste int not null,
+    marka varchar(50) not null,
+    snaga varchar(50) null,
+    kilometraza varchar(50) null
 );
 
 create table vozac(
-    ime varchar(50),
-    prezime varchar(50),
-    godine varchar(50),
+    sifra int not null primary key auto_increment,
+    osoba int not null,
+    godine int not null,
     kategorije varchar(50)
 );
 
 create table putnik(
-    ime varchar(50),
-    prezime varchar(50),
-    telefon varchar(50),
+    sifra int not null primary key auto_increment,
+    osoba int not null,
+    telefon int,
     polaziste varchar(50),
-    destinacija varchar (50)
+    destinacija varchar (50),
+    vozac int not null
 );
 
 create table osoba(
-    ime varchar(50),
-    prezime varchar(50)
+    sifra int not null primary key auto_increment, 
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
+    vozilo int not null
 );
 
 
+alter table osoba add foreign key (vozilo) references vozilo(sifra);
+alter table putnik add foreign key ( vozac) references vozac(sifra);
+alter table putnik add foreign key (osoba) references osoba(sifra);
+alter table vozac add foreign key (osoba) references osoba(sifra);
