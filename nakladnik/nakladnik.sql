@@ -1,4 +1,4 @@
-
+#mysql -uroot < C:\Users\X\Documents\GitHub\baze\nakladnik\nakladnik.sql
 
 drop database if exists nakladnik;
 create database nakladnik;
@@ -19,7 +19,7 @@ create table djela(
 );
 create table mjesto(
     adresa varchar(50),
-    velicinamjesta int,
+    velicinamjesta int
 );
 
 
