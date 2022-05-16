@@ -21,8 +21,21 @@ create table sirovina(
 );
 
 create table djelatnik(
+    sifra int not null primary key auto_increment,
     ime varchar(50),
     prezime varchar(50),
     placa decimal(18,2),
     obrazovanje varchar(50)
 );
+
+create table materijal(
+    sifra int not null primary key auto_increment,
+    vrstamaterijal varchar(50),
+    kolicinamaterijala int,
+    proizvod int not null,
+    sirovina int not null
+);
+
+alter table materijal add foreign key (sirovina) references sirovina(sifra);
+alter table materijal add foreign key (proizvod) references proizvod(sifra);
+alter table proizvod add foreign key (djelatnik) references djelatnik(sifra);
