@@ -1,3 +1,6 @@
+#mysql -uroot < C:\Users\X\Documents\GitHub\baze\odvjetnik\pravnik.sql
+
+
 drop database if exists pravnik;
 create database pravnik;
 use pravnik;
@@ -29,7 +32,7 @@ create table obrana(
 create table suradnik(
     sifra int not null primary key auto_increment,
     ime varchar(50),
-    prezime varchar(50),
+    prezime varchar(50)
 );
 
 
