@@ -33,6 +33,7 @@ create table osoba(
 
 
 create table trgovac(
+    sifra int not null primary key auto_increment,
     ime varchar(50),
     prezime varchar(50),
     godine int,
@@ -40,9 +41,10 @@ create table trgovac(
 );
 
 alter table trgovina add foreign key (centar) references centar(sifra);
-
+alter table trgovina add foreign key (trgovac) references trgovac(sifra);
 
 alter table osoba add foreign key (sef) references osoba(sifra);
+alter table osoba add foreign key (trgovac) references trgovac(sifra);
 
 
 
