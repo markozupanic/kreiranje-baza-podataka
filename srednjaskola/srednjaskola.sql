@@ -1,4 +1,4 @@
-#<  C:\Users\X\Documents\GitHub\baze\srednjaskola\srednjaskola.sql
+#mysql -uroot <  C:\Users\X\Documents\GitHub\baze\srednjaskola\srednjaskola.sql
 
 drop database if exists srednja;
 create database srednja;
