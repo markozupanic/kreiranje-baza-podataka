@@ -16,7 +16,9 @@ create table trgovina(
     naziv varchar(50),
     vrstatrgovine varchar(50),
     velicinatrgovine int,
-    ponuda varchar(50)
+    ponuda varchar(50),
+    centar int not null,
+    trgovac int not null
 );
 
 create table osoba(
@@ -24,12 +26,23 @@ create table osoba(
     ime varchar(50),
     prezime varchar(50),
     vjestina varchar(50),
-    sef varchar(50)
+    sef int not null,
+    trgovac int not null
 );
 
-create table sef(
-    sifra  int not null primary key auto_increment,
+
+
+create table trgovac(
     ime varchar(50),
-    predavac varchar(50),
+    prezime varchar(50),
+    godine int,
     obrazovanje varchar(50)
 );
+
+alter table trgovina add foreign key (centar) references centar(sifra);
+
+
+alter table osoba add foreign key (sef) references osoba(sifra);
+
+
+
