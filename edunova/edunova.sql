@@ -166,15 +166,35 @@ delete from smjer where sifra=3;
 
 # DZ
 # Unesite sebe kao predavača
+insert into predavac (sifra,osoba,iban)
+values (null,3,null);
+
 
 # Unijeti smjer Tehničar za mrežu
+insert into smjer (sifra,naziv,trajanje,cijena,upisnina,certificiran)
+values (null,'Tehničar za mrežu',150,5000,1000,null);
+
 
 # Sebi kao predavaču promjeniti iban
+update predavac set iban=156146
+where sifra=3;
 
 # Unijeti svoju užu rodbinu za polaznike
+insert into osoba (sifra,prezime,ime,oib,email) values
+(null,'Županić','Goran',null,'goran.zupanic8@gmail.com'),
+(null,'Županić','Ankica',null,'azupanic@live.com'),
+(null,'Županić','Leonarda',null,'lea.zupanic@gmail.com');
+
+
 
 # pola rodbine upisati na JP26 a drugu
 # polovicu na PP25
+
+insert into polaznik (sifra,osoba, brojugovora) values
+(null,15,null),(null,16,null),(null,17,null);
+
+insert into clan(grupa,polaznik) values
+(1,13),(2,14),(2,15);
 
 
 
