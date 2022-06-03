@@ -1,0 +1,32 @@
+# Otvorite ured u Zagrebu
+
+
+INSERT INTO classicmodels.offices
+(officeCode, city, phone, addressLine1, addressLine2, state, country, postalCode, territory)
+VALUES('05616', 'Zagreb', '062062', '14864186', NULL, NULL, 'Hrvatska', 'Baranja', '310000');
+
+
+
+# Postavite cijenu na 10 svim
+# proizvodima koji u svom nazivu
+# nemaju slovo i
+
+update products set buyprice=10
+where productName not like '%m%';
+
+# Izvucite ukupan broj proizvoda 
+# koji imaju cijenu 20
+select sum(1) from products
+where buyPrice =20;
+
+
+# izlistajte sve zaposlenike kojima je šefica
+# Diane Murphy
+
+
+
+
+
+
+
+
